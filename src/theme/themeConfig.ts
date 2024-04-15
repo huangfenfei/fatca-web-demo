@@ -18,7 +18,10 @@ const theme: ThemeConfig = {
     //   colorPrimary: '#00b96b',
     // },
     // Input: {
-    //   colorPrimary: '#4F3793',
+    //   lineHeight: 1
+    // },
+    // Select: {
+    //   lineHeight: 1
     // }
     
   }, 

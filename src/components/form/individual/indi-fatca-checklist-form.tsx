@@ -1,7 +1,7 @@
 import { Card, Checkbox, Col, Radio, Row, Space } from "antd";
 import React from "react";
 
-const FatcaCheckListForm = () => {
+const IndividualFatcaCheckListForm = () => {
     return (
         <div>
             <span><b>FATCA Checklist</b></span> <span style={{ color: "#4F3793" }}>Natural Person</span>
@@ -61,4 +61,4 @@ const FatcaCheckListForm = () => {
     );
 }
 
-export default FatcaCheckListForm;
+export default IndividualFatcaCheckListForm;
