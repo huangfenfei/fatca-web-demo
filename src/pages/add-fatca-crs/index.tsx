@@ -7,7 +7,7 @@ import IndividualTabForm from "@/components/form/individual/indi-tab-form";
 // import { getData, uploadData } from "../../services/api.service";
 const AddFatcaCrsPage = () => {
 
-  const  form = Form.useForm;
+  const form = Form.useForm;
 
   const items: TabsProps['items'] = [
     {
