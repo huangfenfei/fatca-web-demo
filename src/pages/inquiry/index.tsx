@@ -1,7 +1,8 @@
 import SearchCustomerIdForm from "@/components/inquiry/search-customer-id-form";
 import SearchCustomerNameForm from "@/components/inquiry/search-customer-name-form";
 import SearchCustomerTinForm from "@/components/inquiry/search-customer-tin-form";
-import AppLayout from "@/components/layout/appLayout";
+import SearchDateStatusForm from "@/components/inquiry/search-date-status-form";
+import AppLayout from "@/components/layout/app-layout";
 import { Tabs, TabsProps } from "antd";
 import React from "react";
 
@@ -25,7 +26,7 @@ const InquiryPage = () => {
         {
             key: '4',
             label: 'Search by Date/Status',
-            children: '',
+            children: <SearchDateStatusForm />,
         },
     ];
 

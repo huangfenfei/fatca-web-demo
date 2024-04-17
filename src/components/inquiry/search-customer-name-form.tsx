@@ -1,6 +1,6 @@
 import { Button, Col, Form, Input, Row, Select, Space } from "antd";
 import React from "react";
-import SearchTableResultForm from "./search-table-result-form";
+import SearchTableForm from "./search-table-form";
 
 const SearchCustomerNameForm = () => {
     return (
@@ -20,7 +20,7 @@ const SearchCustomerNameForm = () => {
                     </Col>
                 </Row>
             </Space>
-            <SearchTableResultForm />
+            <SearchTableForm />
         </div>
     );
 }

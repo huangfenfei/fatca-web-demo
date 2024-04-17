@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import { Button, Form, Input, Popconfirm, Select, Table } from 'antd';
-import { DeleteFilled } from '@ant-design/icons';
+import { DeleteFilled, DeleteOutlined } from '@ant-design/icons';
 import { ValueType } from 'rc-input/lib/interface';
 
 const ForeignTINTableForm = () => {
@@ -167,7 +167,7 @@ const ForeignTINTableForm = () => {
             align: 'center',
             render: (text: ValueType, record: { key: string; }) => (
                 <Popconfirm title="Are you delete?" onConfirm={() => handleDelete(record.key)}>
-                    <DeleteFilled />
+                    <DeleteOutlined />
                 </Popconfirm>
             ),
         },
@@ -177,7 +177,7 @@ const ForeignTINTableForm = () => {
         <div>
             <br />
             <span><b>Part 2 - CRS Individual Self-Certification</b></span>
-            <Table style={{ textAlign: "center" }} dataSource={dataSource} columns={defaultColumns} pagination={false} />
+            <Table dataSource={dataSource} columns={defaultColumns} pagination={false} />
         </div>
     );
 }

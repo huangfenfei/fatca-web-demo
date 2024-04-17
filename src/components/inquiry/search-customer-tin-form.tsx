@@ -1,12 +1,11 @@
 import { Button, Col, Form, Input, Row, Select, Space } from "antd";
 import React from "react";
-import SearchTableResultForm from "./search-table-result-form";
+import SearchTableForm from "./search-table-form";
 
 const SearchCustomerTinForm = () => {
     return (
         <div>
             <Row gutter={24}>
-
                 <Col span={12}>
                     <Form.Item label={"TIN Number"} rules={[{ required: true }]}>
                         <Input maxLength={100}></Input>
@@ -20,7 +19,7 @@ const SearchCustomerTinForm = () => {
                     </Col>
                 </Row>
             </Space>
-            <SearchTableResultForm />
+            <SearchTableForm />
         </div>
     );
 }

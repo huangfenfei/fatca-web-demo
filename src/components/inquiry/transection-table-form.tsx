@@ -1,9 +1,9 @@
-import { DeleteFilled, DeleteOutlined, FormOutlined, SearchOutlined } from "@ant-design/icons";
-import { Button, Popconfirm, Space, Table } from "antd";
+import { DeleteOutlined, FormOutlined, PrinterOutlined, SearchOutlined } from "@ant-design/icons";
+import { Button, Col, Popconfirm, Row, Space, Table } from "antd";
 import React, { useState } from "react";
 import { ValueType } from "tailwindcss/types/config";
 
-const SearchTableResultForm = () => {
+const TransectionTableForm = () => {
 
     const [dataSource, setDataSource] = useState([
         {
@@ -25,7 +25,18 @@ const SearchTableResultForm = () => {
 
     ]);
 
-    const defaultColumns = [
+    const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+
+    const onSelectChange = (selectedRowKeys: React.SetStateAction<never[]>) => {
+        setSelectedRowKeys(selectedRowKeys);
+    };
+
+    const rowSelection = {
+        selectedRowKeys,
+        onChange: onSelectChange,
+    };
+
+    const columns = [
         {
             title: 'Customer Name',
             dataIndex: 'customerName',
@@ -67,19 +78,22 @@ const SearchTableResultForm = () => {
             align: 'center',
             render: (text: ValueType, record: { key: string; }) => (
                 <div>
-                    <Space style={{ gap: 5 }}>
-                        <Button type="primary"><SearchOutlined /></Button>
+                    <Space style={{ gap: 10 }}>
+                        {/* <Button type="primary"><SearchOutlined /></Button>
                         <Button type="primary" style={{ backgroundColor: "#FEAC00" }}><FormOutlined /></Button>
                         <Popconfirm title="Are you delete?" onConfirm={() => handleDelete(record.key)}>
-                            {/* <DeleteFilled /> */}
                             <Button type="primary" danger><DeleteOutlined /></Button>
                         </Popconfirm>
+                        <Button type="default"><PrinterOutlined /></Button> */}
 
+                        <SearchOutlined />
+                        <FormOutlined />
+                        <Popconfirm title="Are you delete?" onConfirm={() => handleDelete(record.key)}>
+                            <DeleteOutlined />
+                        </Popconfirm>
+                        <PrinterOutlined />
                     </Space>
-
-
                 </div>
-
             ),
         },
     ];
@@ -90,9 +104,16 @@ const SearchTableResultForm = () => {
 
     return (
         <div>
-            <Table style={{ marginTop: 30 }} dataSource={dataSource} columns={defaultColumns} pagination={false} />
+            <Table style={{ marginTop: 30 }} rowSelection={rowSelection} columns={columns} dataSource={dataSource} />
+            <Space style={{ width: "100%", justifyContent: "right" }}>
+                <Row gutter={24}>
+                    <Col span={24}>
+                        <Button type="primary" htmlType="submit" style={{ width: 100, justifyContent: "center" }}>Print</Button>
+                    </Col>
+                </Row>
+            </Space>
         </div>
     );
 }
 
-export default SearchTableResultForm;
+export default TransectionTableForm;
