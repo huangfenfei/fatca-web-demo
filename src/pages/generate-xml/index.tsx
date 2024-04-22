@@ -1,4 +1,4 @@
-import AppLayout from "@/components/layout/app-layout";
+import AppLayout from "@/components/layouts/app-layout";
 import React from "react";
 
 const GenerateXMLPage = () => {
