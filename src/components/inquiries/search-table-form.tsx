@@ -65,25 +65,6 @@ const SearchTableForm = () => {
             fixed: 'left',
         },
         {
-            title: 'Action',
-            dataIndex: 'operation',
-            align: 'center',
-            width: 150,
-            fixed: 'left',
-            render: (text: ValueType, record: { key: string; }) => (
-                <div>
-                    <Space style={{ gap: 10 }}>
-                        <SearchOutlined />
-                        <FormOutlined />
-                        <Popconfirm title="Are you delete?" onConfirm={() => handleDelete(record.key)}>
-                            <DeleteOutlined />
-                        </Popconfirm>
-                        <PrinterOutlined />
-                    </Space>
-                </div>
-            ),
-        },
-        {
             title: 'ID Number',
             dataIndex: 'idNumber',
             align: 'center',
@@ -166,7 +147,26 @@ const SearchTableForm = () => {
             dataIndex: 'hoRemark',
             align: 'center',
             width: 300,
-        }
+        },
+        {
+            title: 'Action',
+            dataIndex: 'operation',
+            align: 'center',
+            width: 150,
+            fixed: 'right',
+            render: (text: ValueType, record: { key: string; }) => (
+                <div>
+                    <Space style={{ gap: 10 }}>
+                        <SearchOutlined />
+                        <FormOutlined />
+                        <Popconfirm title="Are you delete?" onConfirm={() => handleDelete(record.key)}>
+                            <DeleteOutlined />
+                        </Popconfirm>
+                        <PrinterOutlined />
+                    </Space>
+                </div>
+            ),
+        },
         
     ];
 

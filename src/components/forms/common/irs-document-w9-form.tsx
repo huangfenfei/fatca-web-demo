@@ -1,4 +1,5 @@
 import { Card, Checkbox, Col, Form, Input, Row, Select } from "antd";
+import TextArea from "antd/es/input/TextArea";
 import React from "react";
 
 const IRSDocumentW9Form = () => {
@@ -66,9 +67,12 @@ const IRSDocumentW9Form = () => {
                             </Col>
                         </Row>
                         <Row gutter={24}>
-                            <Col span={18}>
+                            <Col span={16}>
                                 <Form.Item label={"Address"} rules={[{ required: true }]}>
-                                    <Input maxLength={100}></Input>
+                                    {/* <Input maxLength={100}></Input> */}
+                                    <TextArea
+                                        autoSize={{ minRows: 2, maxRows: 2 }}
+                                    ></TextArea>
                                 </Form.Item>
                             </Col>
                         </Row>

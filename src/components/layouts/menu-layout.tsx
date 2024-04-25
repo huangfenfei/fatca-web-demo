@@ -52,9 +52,9 @@ const MenuLayout = () => {
         },
         {
             label: 'Batch Result',
-            key: 'xml',
+            key: 'batch',
             icon: <UsbOutlined />,
-            onClick: e => router.push('/generate-xml')
+            onClick: e => router.push('/batch-result')
         },
     ];
 

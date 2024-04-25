@@ -18,10 +18,12 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
+  background: linear-gradient(to bottom,
       transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.login-area {
+  background-image: -moz-linear-gradient(0deg, #B5B0B0 0%, #ffffff 100%);
+  background-image: -webkit-linear-gradient(90deg, #B5B0B0 0%, #ffffff 100%);
 }
