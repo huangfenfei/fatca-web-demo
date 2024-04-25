@@ -1,4 +1,4 @@
-import { FileExcelOutlined, SearchOutlined, UserAddOutlined } from "@ant-design/icons";
+import { FileExcelOutlined, SearchOutlined, UsbOutlined, UserAddOutlined } from "@ant-design/icons";
 import { Layout, Menu, Row, Image, GetProp, MenuProps } from "antd";
 import { useRouter } from 'next/router';
 import React from "react";
@@ -48,6 +48,12 @@ const MenuLayout = () => {
             label: 'Generate XML',
             key: 'xml',
             icon: <FileExcelOutlined />,
+            onClick: e => router.push('/generate-xml')
+        },
+        {
+            label: 'Batch Result',
+            key: 'xml',
+            icon: <UsbOutlined />,
             onClick: e => router.push('/generate-xml')
         },
     ];

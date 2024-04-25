@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { Form, Input, DatePicker, Button, Table, Avatar, message, TabsProps, Tabs } from "antd";
 import { useQuery, useMutation } from "@tanstack/react-query";
 import AppLayout from "../../components/layouts/app-layout";
-import JuristicCustomerInfoForm from "@/components/form/juristic/juri-customer-info-form";
-import IndividualTabForm from "@/components/form/individual/indi-tab-form";
+import JuristicCustomerInfoForm from "@/components/forms/juristic/juri-customer-info-form";
+import IndividualTabForm from "@/components/forms/individual/indi-tab-form";
 // import { getData, uploadData } from "../../services/api.service";
 const AddFatcaCrsPage = () => {
 

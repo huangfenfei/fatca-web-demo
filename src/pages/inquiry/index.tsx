@@ -1,7 +1,7 @@
-import SearchCustomerIdForm from "@/components/inquiry/search-customer-id-form";
-import SearchCustomerNameForm from "@/components/inquiry/search-customer-name-form";
-import SearchCustomerTinForm from "@/components/inquiry/search-customer-tin-form";
-import SearchDateStatusForm from "@/components/inquiry/search-date-status-form";
+import SearchCustomerIdForm from "@/components/inquiries/search-customer-form";
+import SearchCustomerNameForm from "@/components/inquiries/search-customer-name-form";
+import SearchCustomerTinForm from "@/components/inquiries/search-customer-tin-form";
+import SearchDateStatusForm from "@/components/inquiries/search-date-status-form";
 import AppLayout from "@/components/layouts/app-layout";
 import { Tabs, TabsProps } from "antd";
 import React from "react";
@@ -10,23 +10,18 @@ const InquiryPage = () => {
     const items: TabsProps['items'] = [
         {
             key: '1',
-            label: 'Search by Customer ID ',
+            label: 'Search by Customer',
             children: <SearchCustomerIdForm />,
         },
         {
             key: '2',
-            label: 'Search by Customer Name',
+            label: 'Search by Transaction',
             children: <SearchCustomerNameForm />,
         },
         {
             key: '3',
-            label: 'Search by TIN Number',
+            label: 'Search Historical',
             children: <SearchCustomerTinForm />,
-        },
-        {
-            key: '4',
-            label: 'Search by Date/Status',
-            children: <SearchDateStatusForm />,
         },
     ];
 
