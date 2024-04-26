@@ -7,7 +7,7 @@ const font = Noto_Sans_Thai({
   weight: ["400", "700"]
 })
 
-const theme: ThemeConfig = {
+const themeConfig: ThemeConfig = {
   token: {
     fontSize: 16,
     fontFamily: font.style.fontFamily,
@@ -23,8 +23,7 @@ const theme: ThemeConfig = {
     // Select: {
     //   lineHeight: 1
     // }
-    
   }, 
 };
 
-export default theme;
+export default themeConfig;
