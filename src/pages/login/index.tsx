@@ -11,11 +11,13 @@ const LoginPage = () => {
         console.log('Received values:', values);
     };
 
-    const handleLogin = () => {
-        instance.loginRedirect(loginRequest).catch(e => {
-            console.log(e);
-        });
-    }
+    const handleLogin = async () => {
+        console.log(loginRequest);
+        await instance.loginRedirect(loginRequest).catch((err) =>
+            console.error('login failed', err)
+        );
+    };
+
     return (
         <div className="login-area" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
             <Form

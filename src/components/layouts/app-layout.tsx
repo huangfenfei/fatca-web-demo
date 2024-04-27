@@ -38,8 +38,6 @@ function getItem(
   } as MenuItem;
 }
 
-
-
 const AppLayout = ({ children }: { children: ReactElement }) => {
   const {
     token: { colorBgContainer, borderRadiusLG },

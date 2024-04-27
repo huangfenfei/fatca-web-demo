@@ -3,10 +3,12 @@ import SearchCustomerNameForm from "@/components/inquiries/search-customer-name-
 import SearchCustomerTinForm from "@/components/inquiries/search-customer-tin-form";
 import SearchDateStatusForm from "@/components/inquiries/search-date-status-form";
 import AppLayout from "@/components/layouts/app-layout";
+import { useMsal } from "@azure/msal-react";
 import { Tabs, TabsProps } from "antd";
 import React from "react";
 
 const InquiryPage = () => {
+
     const items: TabsProps['items'] = [
         {
             key: '1',

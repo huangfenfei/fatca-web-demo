@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Layout, Row, Image } from "antd";
 import { LogoutOutlined, UserAddOutlined } from "@ant-design/icons";
+import { useMsal } from "@azure/msal-react";
 const { Header, Content, Sider } = Layout;
 
 const HeaderLayout = ({ name }: { name: string }) => {
+    const [accountName, setAccountName] = useState("Unknown");
+    const { instance, accounts } = useMsal();
+    const isAuthenticated = accounts.length > 0;
+    
+    useEffect(() => {
+        if (isAuthenticated) {
+            const accInfo = accounts[0];
+            setAccountName(accInfo.name ?? 'Unknown');
+        }
+    }, []);
+
     return (
         <Header style={{ background: '#4F3793', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 100 }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -13,7 +25,7 @@ const HeaderLayout = ({ name }: { name: string }) => {
             <div style={{ marginRight: '8px' }}>
                 <Row justify="end" style={{ textAlign: 'right', height: 28 }}>
                     <Col span={24}>
-                        <span style={{ color: "#fff", fontWeight: "bold" }}> <UserAddOutlined /> {name}</span>
+                        <span style={{ color: "#fff", fontWeight: "bold" }}> <UserAddOutlined /> {accountName}</span>
                     </Col>
                 </Row>
                 <Row justify="end" style={{ textAlign: 'right', height: 28 }}>
